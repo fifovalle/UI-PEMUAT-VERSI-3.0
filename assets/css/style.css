@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #0f0e17;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.pemuat {
+    width: 100px;
+    height: 50px;
+    background: #ff8906;
+    border-radius: 50px;
+    --warna: no-repeat radial-gradient(farthest-side, #000 92%, #0000);
+    --ukuran: 25px 25px;
+    -webkit-mask: var(--warna) left 4px top 50%, var(--warna) center,
+        var(--warna) right 4px top 50%, linear-gradient(#000 0 0);
+    mask: var(--warna) left 4px top 50%, var(--warna) center,
+        var(--warna) right 4px top 50%, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation: kedip 1.5s infinite;
+}
+
+@keyframes kedip {
+    0% {
+        -webkit-mask-size: 0 0, 0 0, 0 0, auto;
+    }
+
+    16.67% {
+        -webkit-mask-size: var(--ukuran), 0 0, 0 0, auto;
+    }
+
+    33.33% {
+        -webkit-mask-size: var(--ukuran), var(--ukuran), 0 0, auto;
+    }
+
+    50% {
+        -webkit-mask-size: var(--ukuran), var(--ukuran), var(--ukuran), auto;
+    }
+
+    66.67% {
+        -webkit-mask-size: 0 0, var(--ukuran), var(--ukuran), auto;
+    }
+
+    83.33% {
+        -webkit-mask-size: 0 0, 0 0, var(--ukuran), auto;
+    }
+
+    100% {
+        -webkit-mask-size: 0 0, 0 0, 0 0, auto;
+    }
+}
